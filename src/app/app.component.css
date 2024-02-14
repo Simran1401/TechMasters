@@ -1,0 +1,760 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgba(58, 175, 169, 0.08);
+    /* background: #A1FFCE;
+    background: -webkit-linear-gradient(to top, #FAFFD1, #A1FFCE);
+    background: linear-gradient(to top, #FAFFD1, #A1FFCE); */
+}
+
+.bg-img {
+    background: url(../assets/imgs/Vector.png);
+    background-size: 100% 100%;
+    background-position: center;
+    width: 100%;
+    height: 200px;
+}
+
+.navbar {
+    font-family: 'Urbanist';
+    padding: 0;
+    align-items: flex-start;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 !important;
+}
+
+.navbar-brand {
+    padding-top: 20px;
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 700;
+    color: #fff;
+}
+
+.nav-item:nth-child(odd) .nav-link::before {
+    content: '';
+    background-color: #fff;
+    height: 30px;
+    width: 2px;
+}
+
+.nav-item:nth-child(even) .nav-link::before {
+    content: '';
+    background-color: #fff;
+    height: 44px;
+    width: 2px;
+}
+
+.nav-link::after {
+    content: '';
+    background-color: #fff;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    transition: ease-in-out .5s;
+}
+
+.nav-item:nth-child(1)::after {
+    content: 'Home';
+}
+
+.nav-item:nth-child(2)::after {
+    content: 'About Us';
+}
+
+.nav-item:nth-child(3)::after {
+    content: 'Courses';
+}
+
+.nav-item:nth-child(4)::after {
+    content: 'Benefits';
+}
+
+.nav-item:nth-child(5)::after {
+    content: 'Contact Us';
+}
+
+.nav-item {
+    padding: 0 50px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    transition: ease-in-out .5s;
+}
+
+.nav-item:hover .nav-link::after {
+    background-color: #f7c96c;
+    box-shadow: 0px 4px 6px #f7c96c;
+    transition: ease-in-out .5s;
+}
+
+.nav-item:hover .nav-link::before {
+    background-color: #fcc659;
+}
+
+.nav-item:hover::after {
+    background: -webkit-linear-gradient(#f7c96c, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar .container-fluid {
+    padding: 0 50px;
+}
+
+.white {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.white:before {
+    z-index: 1000;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60vh;
+}
+
+.white:after {
+    z-index: 1000;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20vh;
+}
+
+.squares {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.square {
+    animation: squares 9.5s linear infinite;
+    align-self: flex-end;
+    width: 1em;
+    height: 1em;
+    transform: translateY(100%);
+    background: #3aafa9b0;
+    z-index: 0;
+}
+
+.square:nth-child(2) {
+    height: 1.5em;
+    width: 3em;
+    animation-delay: 1s;
+    animation-duration: 17s;
+    -webkit-filter: blur(5px);
+}
+
+.square:nth-child(3) {
+    height: 2em;
+    width: 1em;
+    animation-delay: 1.5s;
+    animation-duration: 8s;
+    -webkit-filter: blur();
+}
+
+.square:nth-child(4) {
+    height: 1em;
+    width: 1.5em;
+    animation-delay: 0.5s;
+    -webkit-filter: blur(3px);
+    animation-duration: 13s;
+}
+
+.square:nth-child(5) {
+    height: 1.25em;
+    width: 2em;
+    animation-delay: 4s;
+    -webkit-filter: blur(2px);
+    animation-duration: 11s;
+}
+
+.square:nth-child(6) {
+    height: 2.5em;
+    width: 2em;
+    animation-delay: 2s;
+    -webkit-filter: blur(1px);
+    animation-duration: 9s;
+}
+
+.square:nth-child(7) {
+    height: 5em;
+    width: 2em;
+    -webkit-filter: blur(2.5px);
+    animation-duration: 12s;
+}
+
+.square:nth-child(8) {
+    height: 1em;
+    width: 3em;
+    animation-delay: 5s;
+    -webkit-filter: blur(6px);
+    animation-duration: 18s;
+}
+
+.square:nth-child(9) {
+    height: 1.5em;
+    width: 2em;
+    -webkit-filter: blur(0.5px);
+    animation-duration: 9s;
+}
+
+.square:nth-child(9) {
+    height: 3em;
+    width: 2.4em;
+    animation-delay: 6s;
+    -webkit-filter: blur(0.5px);
+    animation-duration: 12s;
+}
+
+@keyframes squares {
+    from {
+        transform: translateY(100%) rotate(-50deg);
+    }
+
+    to {
+        transform: translateY(calc(-100vh + -100%)) rotate(20deg);
+    }
+}
+
+.f-48 {
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 48px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.f-24 {
+    font-family: 'Inder', sans-serif;
+    font-size: 18px;
+    width: 50%;
+    margin: auto;
+}
+
+.f-64 {
+    font-family: 'Lemon', serif;
+    font-size: 64px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.player1 {
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.section-1 {
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-top: -100px;
+}
+
+.sub-section-1 {
+    z-index: 1;
+}
+
+.f-40 {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Inknut Antiqua', serif;
+}
+
+.f-18 {
+    font-size: 18px;
+    font-family: 'Inder', sans-serif;
+}
+
+.sub-section-2 {
+    padding: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.irish {
+    font-family: 'Irish Grover', cursive;
+    font-weight: 600;
+}
+
+.bg-wavy-img {
+    width: 100%;
+    z-index: -2;
+    position: relative;
+}
+
+.player2 {
+    position: absolute;
+    height: 500px;
+    width: 100%;
+    top: 109%;
+    left: 50%;
+    z-index: -2;
+    transform: translate(-50%, -100%);
+}
+
+.section-2 {
+    position: relative;
+}
+
+.green {
+    font-family: 'Lemon';
+    font-size: 20px;
+    color: #3aafa9;
+}
+
+.w-95 {
+    width: 95%;
+    margin: auto;
+}
+
+.sub-section-3 {
+    background-image: url(../assets/imgs/bg-img.png);
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 50px 0;
+}
+
+.course-img {
+    height: 154px;
+    width: 154px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.f-22 {
+    font-family: 'Inknut Antiqua', serif;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.f-16 {
+    font-size: 16px;
+    font-family: 'Inder', sans-serif;
+    line-height: 33px;
+}
+
+.btn-tech {
+    border-radius: 7px;
+    background-color: #3aafa9;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    font-size: 18px;
+    font-family: 'Inder', sans-serif;
+    border: none;
+    color: #fff;
+}
+
+.course-div {
+    background: rgb(255 255 255 / 69%);
+    padding: 50px 20px;
+    text-align: -webkit-center;
+    width: 95%;
+    margin: auto;
+    position: relative;
+}
+
+.player3 {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    position: absolute;
+    /* top: 100%; */
+    z-index: -2;
+}
+
+.mandala {
+    background: url(../assets/imgs/bg-circles.png);
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.player4 {
+    width: 40%;
+    margin: 0 0 0 auto !important;
+}
+
+.section-4 .f-24 {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Inknut Antiqua', serif;
+    width: 100%;
+}
+
+.section-4 .row .col-sm-6:first-child {
+    padding-left: 100px;
+}
+
+.section-4 {
+    position: relative;
+}
+
+.sub-section-4 {
+    padding: 50px 0;
+}
+
+.sub-section-5 {
+    padding: 50px 0;
+}
+
+.heading {
+    width: 20%;
+}
+
+.heading-div {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.player5 {
+    width: 100%;
+}
+
+/* .mandala2 {
+    background: url(../assets/imgs/Rmandala.png);
+    width: 20%;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(-100%, -50%);
+    z-index: -1;    
+    height: 100%;
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+} */
+
+div[class*=box] {
+    height: 33.33%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-1 {
+    background-color: #FF6766;
+}
+
+.btn-one {
+    color: #FFF;
+    transition: all 0.3s;
+    position: relative;
+    height: 57px;
+    width: 60%;
+}
+
+.btn-one span {
+    transition: all 0.3s;
+    color: #fff;
+    z-index: 12;
+    position: relative;
+    font-size: 18px;
+    font-family: 'Inder', sans-serif;
+}
+
+.btn-one::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    color: #fff;
+    border-top-color: #3aafa9;
+    border-bottom-color: #3aafa9;
+    transform: scale(0.1, 1);
+}
+
+.btn-one:hover span {
+    letter-spacing: 2px;
+    color: #000;
+}
+
+.btn-one:hover::before {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+
+.btn-one::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+    background-color: #3aafa9;
+    border-radius: 7px;
+}
+
+.btn-one:hover::after {
+    opacity: 0;
+    transform: scale(0.1, 1);
+}
+
+.footer {
+    border-top: 2px solid #3aafa9;
+    border-radius: 50%;
+}
+
+.benefits-card {
+    box-shadow: 0 .25rem 1.75rem #1e222812 !important;
+    border: none;
+    padding: 40px 20px;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    background-color: #3aafa91c;
+}
+
+.card-1 {
+    animation: float 6s ease-in-out infinite;
+}
+
+.card-2 {
+    animation: float 8s ease-in-out infinite;
+}
+
+.card-3 {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-20px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+.icon-div {
+    background: #3aafa9;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 9px solid #fff;
+    color: #fff;
+    margin: auto;
+}
+
+.icon-div i {
+    font-size: 23px;
+}
+
+.benefits-card .f-16 {
+    line-height: 1.6;
+}
+
+.f-17 {
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.w-90 {
+    width: 80%;
+    margin: auto;
+}
+
+.section-5{
+    background-color: #3aafa91c;
+}
+
+.form-control{
+    padding: 10px 10px;
+}
+
+@media (max-width:1280px) {
+    .section-1 {
+        height: 530px;
+    }
+
+    .section-2{
+        margin-top: -60px;
+    }
+
+    .player1 {
+        height: 400px;
+        width: 400px;
+    }
+
+    .player3 {
+        width: 95%;
+        height: 365px;
+    }
+
+    .benefits-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width:1024px) {
+    .bg-img{
+        height: 160px;
+    }
+
+    .nav-item[_ngcontent-ng-c3461178836]:nth-child(odd) .nav-link[_ngcontent-ng-c3461178836]::before{
+        height: 16px;
+    }
+
+    .nav-link[_ngcontent-ng-c3461178836]::after {
+        height: 15px;
+        width: 15px;
+    }
+
+    .nav-item{
+        font-size: 15px;
+    }
+
+    .nav-item[_ngcontent-ng-c3461178836]:nth-child(even) .nav-link[_ngcontent-ng-c3461178836]::before {
+        height: 30px;
+    }    
+
+    .navbar-brand{
+        font-size: 42px;
+    }
+
+    .f-48{
+        font-size: 38px;
+    }
+
+    .f-64{
+        font-size: 54px;
+    }
+
+    .f-24{
+        font-size: 15px;
+    }
+
+    .f-40{
+        font-size: 30px;
+    }
+
+    .f-18{
+        font-size: 15px;
+    }
+
+    .player2{
+        height: 400px;
+    }
+
+    .course-img[_ngcontent-ng-c3461178836] {
+        height: 100px;
+        width: 100px;
+    }
+
+    .course-div{
+        padding: 20px;
+    }
+
+    .f-22{
+        font-size: 17px;
+    }
+
+    .f-16{
+        font-size: 14px;
+        font-family: 'Inder', sans-serif;
+        line-height: 23px;
+    }
+
+    .btn-one{
+        height: 48px;
+    width: 80%;
+    }
+
+    .btn-one span{
+        font-size: 15px;
+    }
+
+    .heading{
+        width: 18%;
+    }
+
+    .benefits-card{
+        width: 90%;
+    }
+    .icon-div{
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 6px solid #fff;
+    }
+
+    .f-17{
+        font-size: 15px;
+    }
+}
